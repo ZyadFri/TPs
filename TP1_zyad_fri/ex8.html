@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau HTML aléatoire</title>
+</head>
+<body>
+    <div id="table-container"></div>
+
+    <script>
+        var X = 3; 
+        var Y = 4; 
+
+        var tableHTML = '<table border="1">';
+        for (var i = 0; i < X; i++) {
+            tableHTML += '<tr>';
+            for (var j = 0; j < Y; j++) {
+                var randomContent = Math.floor(Math.random() * 100); 
+                tableHTML += '<td>' + randomContent + '</td>';
+            }
+            tableHTML += '</tr>';
+        }
+        tableHTML += '</table>';
+
+        document.getElementById('table-container').innerHTML = tableHTML;
+    </script>
+</body>
+</html>

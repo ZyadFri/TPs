@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prix TTC</title>
+</head>
+<body>
+    <script>
+        var prixHT = prompt("Veuillez entrer le prix HT :");
+        prixHT = parseFloat(prixHT);
+        if (!isNaN(prixHT)) {
+            var prixTTC = prixHT * 1.20;
+            document.body.innerText = "Le prix TTC (TVA 20%) est : " + prixTTC.toFixed(2) + " dhs";
+        } else {
+            document.body.innerText = "Le prix saisi n'est pas valide.";
+        }
+    </script>
+</body>
+</html>

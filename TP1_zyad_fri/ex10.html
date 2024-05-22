@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Numbers List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>Liste de nombres aléatoires :</h2>
+    <ul id="randomNumbersList">
+    </ul>
+
+    <script>
+        var ul = document.getElementById("randomNumbersList");
+        for (var i = 0; i < 10; i++) {
+            var randomNumber = Math.floor(Math.random() * 100); 
+            var li = document.createElement("li");
+            li.appendChild(document.createTextNode(randomNumber));
+            ul.appendChild(li);
+        }
+    </script>
+</body>
+</html>

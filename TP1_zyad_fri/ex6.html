@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prix TTC</title>
+    <style>
+        .red-text {
+            color: red;
+        }
+
+        .green-text {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var prixHT = prompt("Veuillez entrer le prix HT :");
+        if (isNaN(prixHT) || prixHT === null || prixHT === "") {
+            alert("Veuillez entrer un prix HT valide.");
+        } else {
+                prixHT = parseFloat(prixHT);
+            var tauxTVA = prompt("Veuillez entrer le taux de TVA en pourcentage :");
+            if (isNaN(tauxTVA) || tauxTVA === null || tauxTVA === "") {
+                alert("Veuillez entrer un taux de TVA valide.");
+            } else {
+                tauxTVA = parseFloat(tauxTVA) / 100;
+                var prixTTC = prixHT * (1 + tauxTVA);
+                var classeCSS ;
+                if(prixTTC>100){
+                    classeCSS='red-text';
+                }
+                else{
+                    classeCSS='green-text';
+                }
+                document.body.innerHTML = '<p style="color: ' + classeCSS + '">Le prix TTC (TVA ' + (tauxTVA * 100) + '%) est : ' + prixTTC.toFixed(2) + ' dhs</p>';
+            }
+        }
+    </script>
+</body>
+</html>

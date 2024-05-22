@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau HTML dynamique</title>
+</head>
+<body>
+    <div id="table-container"></div>
+
+    <script>
+        var X = prompt("Veuillez entrer le nombre de lignes :");
+        var Y = prompt("Veuillez entrer le nombre de colonnes :");
+
+        if (isNaN(X) || isNaN(Y)) {
+            alert("Veuillez entrer des nombres valides pour le nombre de lignes et de colonnes.");
+        } else {
+            X = parseInt(X);
+            Y = parseInt(Y);
+
+            var tableHTML = '<table border="1">';
+            for (var i = 0; i < X; i++) {
+                tableHTML += '<tr>';
+                for (var j = 0; j < Y; j++) {
+                    var randomContent = Math.floor(Math.random() * 100); 
+                    tableHTML += '<td>' + randomContent + '</td>';
+                }
+                tableHTML += '</tr>';
+            }
+            tableHTML += '</table>';
+            document.getElementById('table-container').innerHTML = tableHTML;
+        }
+    </script>
+</body>
+</html>

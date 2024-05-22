@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Images from Picsum</title>
+</head>
+<body>
+    <h1>Random Images from Picsum</h1>
+    <div id="imageContainer" style="display: flex; flex-wrap: wrap;"></div>
+
+    <script>
+        function generateRandomImages() {
+            var imageContainer = document.getElementById("imageContainer");
+
+            for (var i = 0; i < 12; i++) {
+                var imageId = Math.floor(Math.random() * 1000); 
+                var imageUrl = 'https://picsum.photos/id/' + imageId + '/350/350';
+                var img = document.createElement('img');
+                img.src = imageUrl;
+                img.style.margin = '5px'; 
+
+                imageContainer.appendChild(img);
+            }
+        }
+
+        window.onload = generateRandomImages;
+    </script>
+</body>
+</html>
